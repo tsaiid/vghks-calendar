@@ -46,12 +46,17 @@
 <div id="bg"></div>
 <div id="container">
     <div id="middle">
-    <div id="center">
-        <div id="title"><h1>醫師假單一覽</h1></div>
-        <div id='calendar'></div>
-    </div>
+        <div id="center">
+            <div id="title"><h1>醫師假單一覽</h1></div>
+            <div id='calendar'></div>
+        </div>
     </div>
 </div>
+<!-- Event Modal -->
+<div id="calEventDialog" title="備註">
+    <p id="calEventDescription"></p>
+</div>
+
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js'></script>
@@ -81,6 +86,18 @@ $(document).ready(function() {
         eventLimit: true, // strang bug, without this, bottom border disappears in firefox
         googleCalendarApiKey: calGoogleCalendarApiKey,
         eventSources: calEventSources,
+        eventClick: function(calEvent, jsEvent, view) {
+            $('#calEventDescription').text(calEvent.description === undefined ? '代理人不明，請洽總醫師辦公室' : calEvent.description);
+            $('#calEventDialog').dialog('open');
+            return false;   // do not follow event.url
+        }
+    });
+
+    $('#calEventDialog').dialog({
+        resizable: false,
+        autoOpen: false,
+        width: 400,
+        modal: true,
     });
 });
 </script>
