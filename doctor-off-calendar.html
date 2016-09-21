@@ -54,6 +54,7 @@
 </div>
 <!-- Event Modal -->
 <div id="calEventDialog" title="備註">
+    <h3 id="calEventTitle"></h3>
     <p id="calEventDescription"></p>
 </div>
 
@@ -88,6 +89,7 @@ $(document).ready(function() {
         eventSources: calEventSources,
         eventClick: function(calEvent, jsEvent, view) {
             $('#calEventDescription').text(calEvent.description === undefined ? '代理人不明，請洽總醫師辦公室' : calEvent.description);
+            $('#calEventTitle').text(calEvent.title);
             $('#calEventDialog').dialog('open');
             return false;   // do not follow event.url
         }
@@ -98,6 +100,10 @@ $(document).ready(function() {
         autoOpen: false,
         width: 400,
         modal: true,
+        open: function( e, ui ) {   // ref: https://jsfiddle.net/adamboduch/ekaW6/
+            $( this ).siblings( ".ui-dialog-titlebar" )
+                     .find( "button" ).blur(); 
+        }
     });
 });
 </script>
