@@ -30,11 +30,15 @@ body {
     max-width: 1180px;
 }
 #title {
-    -webkit-writing-mode: lr-tb;
-    -ms-writing-mode: lr-tb;
-    writing-mode: vertical-lr !important;
-    margin: auto;
-    text-align: center;
+    ms-writing-mode: tb-rl;
+    -webkit-writing-mode: vertical-rl;
+    -moz-writing-mode: vertical-rl;
+    -ms-writing-mode: vertical-rl;
+    writing-mode: vertical-rl;
+    -webkit-text-orientation: upright;
+    -moz-text-orientation: upright;
+    -ms-text-orientation: upright;
+    text-orientation: upright;
     font-size: 3em;
 }
 /* .ui-widget-content { opacity: 0.9; filter: alpha(opacity=90); } */
@@ -46,4 +50,9 @@ span.fc-title { font-size: 16px; }
 
   display: flex;
   align-items: center;
+}
+
+.no-gutter [class^="col-md"] {
+    padding-left: 0;
+    padding-right: 0;
 }
