@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    text-align: center;
+    height: 100%;
+}
+#bg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: url(https://farm9.staticflickr.com/8710/28191234485_e95fb036ae_k_d.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    opacity: 0.2; filter: alpha(opacity=20);
+}
+#container {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+#middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+#center {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1180px;
+}
+/* .ui-widget-content { opacity: 0.9; filter: alpha(opacity=90); } */
+span.fc-title { font-size: 16px; }
