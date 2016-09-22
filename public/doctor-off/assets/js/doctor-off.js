@@ -13,7 +13,7 @@ $(document).ready(function() {
             center: '',
             right: 'agendaWeek month today prev,next'
         },
-        height: 680,
+        height: 720,
         aspectRatio: 1,
         firstDay: 1,
         theme: true,
