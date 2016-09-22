@@ -33,7 +33,7 @@ body {
     ms-writing-mode: tb-rl;
     -webkit-writing-mode: vertical-rl;
     -moz-writing-mode: vertical-rl;
-    -ms-writing-mode: vertical-rl;
+    -ms-writing-mode: tb-rl;
     writing-mode: vertical-rl;
     -webkit-text-orientation: upright;
     -moz-text-orientation: upright;
